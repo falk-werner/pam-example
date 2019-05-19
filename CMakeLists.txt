@@ -5,4 +5,5 @@ link_libraries(pam)
 link_libraries(pam_misc)
 
 add_executable(auth-interactive src/app/auth-interactive.c)
+add_executable(custom-conv-interactive src/app/custom-conv-interactive.c)
 
