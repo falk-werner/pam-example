@@ -32,7 +32,7 @@ static int custom_conversation(
     return PAM_SUCCESS;
 }
 
-int main(int argc, char * argv)
+int main(int argc, char * argv[])
 {
     int rc;
     char service_name[MAX_STRING_LENGTH];   
