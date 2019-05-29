@@ -1,0 +1,14 @@
+language: minimal
+
+services:
+- docker
+
+addons:
+  apt:
+    update: true
+    packages:
+    - make
+    - cmake
+
+before-script:
+- make
