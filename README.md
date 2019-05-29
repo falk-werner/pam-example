@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/falk-werner/pam-example.svg?branch=master)](https://travis-ci.org/falk-werner/pam-example)
+
 # pam-example
 
 Some examples of linux PAM.
