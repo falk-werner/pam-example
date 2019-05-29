@@ -32,15 +32,25 @@ RUN set -x \
 
 ARG USERID=1000
 RUN set -x \
-    && useradd -u "$USERID" -ms /bin/bash user
+  && useradd --uid "$USERID" --groups shadow --create-home --shell /bin/bash user
 
-COPY etc/pam.d /etc/pam.d
+RUN set -x \
+  && useradd -ms /bin/bash alice
+
+RUN echo "alice:alice" | chpasswd
+
+RUN set -x \
+  && useradd -ms /bin/bash bob
+
+RUN echo "bob:bob" | chpasswd
 
 COPY . /home/user/pam-example
 RUN set -x \
     && cd /home/user/pam-example/.build \
     && cmake -DCMAKE_BUILD_TYPE=Debug .. \
-    && make
+    && make \
+    && make install
+
 RUN set -x \
     && chown -R user:user /home/user/pam-example
 

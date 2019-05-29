@@ -1,4 +1,0 @@
-# deny access
-
-auth    required    pam_permit.so
-account required    pam_deny.so
