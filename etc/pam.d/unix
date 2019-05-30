@@ -1,4 +1,7 @@
-# permit access
+# Use unix authentication to determine access.
+#
+# NOTE:
+# In order to use unix authentication, read access to /etc/shadow is required.
 
 auth    required    pam_unix.so
 account required    pam_unix.so
